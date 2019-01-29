@@ -1,0 +1,27 @@
+package Test;
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class 비밀번호 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("특수문자 숫자 문자를 이용하여 비밀번호를 입력해 주세요");
+		String pw = sc.next();
+
+		
+		Pattern pattern = Pattern.compile("([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])");
+		Matcher m = pattern.matcher(pw);
+		if(m.find()&& pw.length()>=8) {
+			System.err.println(pw + "비밀번호값으로 올바릅니다");
+		}else {
+			System.err.println(pw + "특수문자와 문자를 이용하여 8자 이상으로 입력해 주세요");
+		}
+
+sc.close();
+	}
+
+}
+// 문자와 숫자 그리고 특수문자를 이용하여 8자 이상의 비밀번호를 제한하는 프로그램.
