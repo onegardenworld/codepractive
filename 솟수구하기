@@ -1,0 +1,43 @@
+//솟수 구하기
+
+package Test;
+
+import java.util.Scanner;
+
+public class 별볼일없는수들 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int i;
+		int j;
+		int a;
+		
+		System.out.println("숫자를 입력해 주세요");
+		a = sc.nextInt();
+				
+		for( i =2; i<=a; i++) {
+			
+			boolean how = true;
+			
+			for(j=2;j<i;j++) {
+				
+				if(i%j ==0 ) {
+					
+					how = false;
+				
+				}
+				
+			
+			}
+			
+			if(how) {
+			
+				System.out.print(i + " ");
+				
+			
+			}
+		}
+
+	}
+
+}
