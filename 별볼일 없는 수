@@ -1,0 +1,40 @@
+//	별볼일 없는 수
+//	사용자로부터 n을 입력받아, 1부터 n까지의 정수 중에서 다음의 수를 제외하고 모두 출력해보자.
+//
+// - 소수
+// - 완전제곱수
+// - 2k 인 수(k는 자연수)
+// - 10 * k 인 수(k는 자연수)
+
+package Test;
+
+import java.util.Scanner;
+
+public class 별볼일없는수들 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int i;
+		int j;
+		int a;
+		
+		System.out.println("숫자를 입력해 주세요");
+		a = sc.nextInt();
+		
+		
+		for (i = 2; i<=a; i ++) {
+			
+			for(j=2; j<i;j++ ) {
+				
+				if(i%j==0 && i>(i&-i) && i%10>0 && j*j%i>0) {
+					System.out.print(i + " ");
+					
+					break;
+					
+				}
+			}
+		} 
+	}
+}
+
+
